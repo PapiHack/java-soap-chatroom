@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://server.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://server.com" xmlns:intf="http://server.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://server.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="subscribe">
+    <complexType>
+     <sequence>
+      <element name="pseudo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribeResponse">
+    <complexType>
+     <sequence>
+      <element name="subscribeReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unsubscribe">
+    <complexType>
+     <sequence>
+      <element name="pseudo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unsubscribeResponse">
+    <complexType>
+     <sequence>
+      <element name="unsubscribeReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMessageUser">
+    <complexType>
+     <sequence>
+      <element name="pseudo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMessageUserResponse">
+    <complexType>
+     <sequence>
+      <element name="getMessageUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="postMsg">
+    <complexType>
+     <sequence>
+      <element name="pseudo" type="xsd:string"/>
+      <element name="Message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="postMsgResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="subscribeRequest">
+
+      <wsdl:part element="impl:subscribe" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribeResponse">
+
+      <wsdl:part element="impl:unsubscribeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribeRequest">
+
+      <wsdl:part element="impl:unsubscribe" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMessageUserResponse">
+
+      <wsdl:part element="impl:getMessageUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="postMsgRequest">
+
+      <wsdl:part element="impl:postMsg" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMessageUserRequest">
+
+      <wsdl:part element="impl:getMessageUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeResponse">
+
+      <wsdl:part element="impl:subscribeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="postMsgResponse">
+
+      <wsdl:part element="impl:postMsgResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RoomServiceImpl">
+
+      <wsdl:operation name="subscribe">
+
+         <wsdl:input message="impl:subscribeRequest" name="subscribeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subscribeResponse" name="subscribeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribe">
+
+         <wsdl:input message="impl:unsubscribeRequest" name="unsubscribeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:unsubscribeResponse" name="unsubscribeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMessageUser">
+
+         <wsdl:input message="impl:getMessageUserRequest" name="getMessageUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMessageUserResponse" name="getMessageUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="postMsg">
+
+         <wsdl:input message="impl:postMsgRequest" name="postMsgRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:postMsgResponse" name="postMsgResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RoomServiceImplSoapBinding" type="impl:RoomServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="subscribe">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subscribeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subscribeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribe">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unsubscribeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unsubscribeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMessageUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMessageUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMessageUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="postMsg">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="postMsgRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="postMsgResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RoomServiceImplService">
+
+      <wsdl:port binding="impl:RoomServiceImplSoapBinding" name="RoomServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/SOAPChatRoom/services/RoomServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
