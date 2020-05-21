@@ -15,7 +15,7 @@ ainsi que la logique d'interaction avec le serveur soap (`Client.java`).
 
 ## Notes
 
-Vous devez disposer au moins d'un serveur `Apache Tomcat` ou `GlassFish` afin de démarrer le projet !
+Vous devez disposer au moins d'un serveur `Apache Tomcat` ou `GlassFish` afin de démarrer le projet !  
 Pour effectuer cette dernière, démarrer d'abord le Serveur Saop via le fichier `Server.java` au niveau du package `sn.esp.server`, puis exécuter le programme `Gui.java` situé dans `sn.esp.client`.
 
 Bon chat !!!!
