@@ -24,8 +24,6 @@ public class Client
 	public Client() throws MalformedURLException
 	{
 		URL wsdlURL = new URL("http://localhost:8080/ChatRoom-Soap/RoomServiceImplService?wsdl");
-		// URL wsdlURL = new
-		// URL("http://localhost:8080/SOAPChatRoom/wsdl/RoomServiceImpl.wsdl");
 		QName qname = new QName("http://server.esp.sn/", "RoomServiceImplService");
 		roomService = Service.create(wsdlURL, qname);
 		this.room = roomService.getPort(RoomService.class);
